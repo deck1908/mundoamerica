@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMAGENES/Picsart_24-12-14_19-03-24-495.ico">
+    <title>Biblioteca Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            background-color: #f3f4f6;
+            background-image: url("https://img.freepik.com/foto-gratis/mesa-madera-fondo-borroso_1134-14.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .barra {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 10%;
+            height: 100%;
+            position: fixed;
+            transition: .4s all;
+            z-index: 1;
+        }
+
+        .barra ul {
+            padding: 0;
+            text-align: center;
+        }
+
+        .barra li {
+            transition: .3s all;
+        }
+
+        .barra a {
+            text-decoration: none;
+            list-style: none;
+            transition: .3s all;
+            font-size: 0px;
+            padding: 0px;
+        }
+
+        .barra h2 {
+            text-align: center;
+            color: #ffffff;
+            padding: 7px;
+            padding-bottom: 7px;
+            font-size: 0px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .barra img {
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+
+        .barra:hover {
+            width: 30%;
+            height: 100%;
+            background-color: #a3874b;
+        }
+
+        .barra:hover h2 {
+            padding: 15px;
+            font-size: 30px;
+        }
+
+        .barra:hover a {
+            font-size: 20px;
+            color: #ffffff;
+            display: block;
+            padding: 20px;
+        }
+
+        .barra:hover img {
+            height: 0;
+        }
+
+        .barra:hover li {
+            border-top: 1px solid #d4af37;
+        }
+
+        .barra:hover ul:last-of-type {
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .barra:hover a:hover {
+            font-size: 25px;
+            padding: 30px 0px;
+            background-color: #d4af37;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #d4af37;
+        }
+
+        .library-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 0 10px;
+        }
+
+        .book {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book-title {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .book-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book {
+                width: 100%;
+            }
+
+            .book-title {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="barra">
+        <h2>Biblioteca</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeaKsCrSCGnyqlFLzO6RlVUtq5RFTAYuAGmA&s" alt="Logo" width="120px" height="120px">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="BIBLIOTECA.html">Biblioteca</a></li>
+            <li><a href="juegoooo.html">Juego</a></li>
+           
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h1>¡Explora Nuestra Biblioteca Virtual!</h1>
+            <p style="color: rgb(255, 255, 255);">Haz clic en un libro para descubrir más.</p>
+        </div>
+
+        <div class="library-container">
+            <div class="book" onclick="navigateTo('libro1.html')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWQNm3SY2seX_yNKyh1wQKAGk9lJ8y-15q7Q&s" alt="Libro 1">
+                <div class="book-title">Libertad política</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro2.html')">
+                <img src="https://www.portaloaca.com/wp-content/uploads/2021/04/lucha_obrera.jpg" alt="Libro 2">
+                <div class="book-title">Liberalismo y comunitarismo</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro3.html')">
+                <img src="https://m.media-amazon.com/images/I/91eeDa7mQeL._AC_UF1000,1000_QL80_.jpg" alt="Libro 3">
+                <div class="book-title">El ser humano como un "animal político"</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro4.html')">
+                <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-libertad-pensamiento_114360-15761.jpg?semt=ais_hybrid" alt="Libro 4">
+                <div class="book-title">Ciclo de producción del pensamiento</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro5.html')">
+                <img src="https://books.scielo.org/id/3dpsk/cover/cover.jpeg" alt="Libro 5">
+                <div class="book-title">La teoría</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro6.html')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Jmontalvo.jpg" alt="Libro 6">
+                <div class="book-title">Los primeros ensayistas ecuatorianos</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro7.html')">
+                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1688735571i/185318934.jpg" alt="Libro 7">
+                <div class="book-title">El método socrático y el pensamiento creativo</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro8.html')">
+                <img src="https://images.cdn1.buscalibre.com/fit-in/360x360/90/de/90de589c8d2a8f576ad474bfc49c5db5.jpg" alt="Libro 8">
+                <div class="book-title">El pensamiento de Maquiavelo</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro9.html')">
+                <img src="https://libreria.clacso.org/images/books/384_Tapa.gif" alt="Libro 9">
+                <div class="book-title">El sistema político democrático desde una ética socio-histórica</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro10.html')">
+                <img src="https://img.over-blog.com/200x200/5/39/54/64/IMAGENES-DEL-BLOG/tumblr_mb3ktcWnzd1rcs85ro1_400.jpg" alt="Libro 10">
+                <div class="book-title">La identidad del ser latinoamericano en diversas expresiones artísticas</div>
+            </div>
+            <div class="book" onclick="navigateTo('libro11.html')">
+                <img src="https://www.polifemo.com/static/img/portadas/_visd_0000JPG017SB.jpg" alt="Libro 11">
+                <div class="book-title">El tratamiento del placer en Epicuro y Onfray</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

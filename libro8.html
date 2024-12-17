@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMAGENES/Picsart_24-12-14_19-03-24-495.ico">
+    <title>El Pensamiento de Maquiavelo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            background-color: #f3f4f6;
+            background-image: url("https://img.freepik.com/foto-gratis/mesa-madera-fondo-borroso_1134-14.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .barra {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 10%;
+            height: 100%;
+            position: fixed;
+            transition: .4s all;
+            z-index: 1;
+        }
+
+        .barra ul {
+            padding: 0;
+            text-align: center;
+        }
+
+        .barra li {
+            transition: .3s all;
+        }
+
+        .barra a {
+            text-decoration: none;
+            list-style: none;
+            transition: .3s all;
+            font-size: 0px;
+            padding: 0px;
+        }
+
+        .barra h2 {
+            text-align: center;
+            color: #ffffff;
+            padding: 7px;
+            padding-bottom: 7px;
+            font-size: 0px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .barra img {
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+
+        .barra:hover {
+            width: 30%;
+            height: 100%;
+            background-color: #a3874b;
+        }
+
+        .barra:hover h2 {
+            padding: 15px;
+            font-size: 30px;
+        }
+
+        .barra:hover a {
+            font-size: 20px;
+            color: #ffffff;
+            display: block;
+            padding: 20px;
+        }
+
+        .barra:hover img {
+            height: 0;
+        }
+
+        .barra:hover li {
+            border-top: 1px solid #d4af37;
+        }
+
+        .barra:hover ul:last-of-type {
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .barra:hover a:hover {
+            font-size: 25px;
+            padding: 30px 0px;
+            background-color: #d4af37;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 2rem;
+            flex-grow: 1;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+            border-radius: 8px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #d4af37;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #a3874b;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .section blockquote {
+            font-style: italic;
+            color: #555;
+            border-left: 4px solid #a3874b;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 1rem;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .section img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .section img {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .section h2 {
+                font-size: 1.2rem;
+            }
+
+            .section p {
+                font-size: 0.9rem;
+            }
+
+            .section img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="barra">
+        <h2>Biblioteca</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeaKsCrSCGnyqlFLzO6RlVUtq5RFTAYuAGmA&s" alt="Logo" width="120px" height="120px">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="BIBLIOTECA.html">Biblioteca</a></li>
+            <li><a href="juegoooo.html">Juego</a></li>
+           
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <h1>El Pensamiento de Maquiavelo</h1>
+            Este método sostiene que los participantes de un grupo pueden realizar una crítica colectiva de sus propias creencias y opiniones, sirviéndose del cuestionamiento de los juicios implícitos de cada persona en su razonamiento.
+            Aquel hombre que por su voluntad de poder pertenezca al tipo gobernante, deberá —por su bien y el de sus súbditos— adoptar una ética de la responsabilidad. Por otro lado, el que no detente el poder público, perteneciendo por tanto al tipo gobernado, podrá congraciarse con Dios mediante una ética de la convicción.</p>
+        </div>
+        <div style="text-align: center;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-56BfsEBFGdALTZFAH8TVV3PIFAK4xC4ZVw&s" alt="Imagen Conclusión">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

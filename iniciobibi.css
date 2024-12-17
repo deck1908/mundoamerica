@@ -1,0 +1,74 @@
+body {
+    background-image: url('https://educahistoria.com/wp-content/uploads/2023/05/DaMarkusWolf_Greek_Mythology_digital_art_cinematographic_052285c9-6663-4dde-88c3-808025a6abb9.png');
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.welcome-container {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 768px) {
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+}
+}
+
+@media (max-width: 480px) {
+h1 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+a {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+}
+
+.welcome-container {
+    padding: 1.5rem;
+}
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMAGENES/Picsart_24-12-14_19-03-24-495.ico">
+    <title>Juego de Filosofía con Emojis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: row;
+            background-color: #f3f4f6;
+            background-image: url("https://img.freepik.com/foto-gratis/mesa-madera-fondo-borroso_1134-14.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .barra {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 20%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: 0.4s all;
+            z-index: 1;
+            background-color: #2a2a2a;
+            color: white;
+            padding-top: 30px;
+            box-sizing: border-box;
+        }
+
+        .barra ul {
+            padding: 0;
+            text-align: center;
+        }
+
+        .barra li {
+            transition: 0.3s all;
+        }
+
+        .barra a {
+            text-decoration: none;
+            list-style: none;
+            transition: 0.3s all;
+            font-size: 20px;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+        }
+
+        .barra h2 {
+            text-align: center;
+            color: white;
+            padding: 7px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .barra img {
+            padding-left: 10px;
+        }
+
+        .barra:hover {
+            width: 30%;
+            background-color: #a3874b;
+        }
+
+        .barra:hover h2 {
+            font-size: 25px;
+        }
+
+        .barra:hover a {
+            font-size: 25px;
+            background-color: #d4af37;
+        }
+
+        .barra:hover li {
+            border-top: 1px solid #d4af37;
+        }
+
+        .barra:hover ul:last-of-type {
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 60%; 
+            margin-left: 25%; 
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .screen {
+            display: none;
+        }
+
+        #start-screen {
+            display: block;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #004b87;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #004b87;
+            color: white;
+            border: 2px solid #004b87;
+            border-radius: 5px;
+            margin: 15px;
+        }
+
+        button:hover {
+            background-color: #1a61a1;
+            border-color: #1a61a1;
+        }
+
+        #game-screen {
+            margin-top: 20px;
+        }
+
+        #emoji {
+            font-size: 50px;
+            margin: 20px;
+        }
+
+        #question {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #004b87;
+        }
+
+        #answers button {
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #ffcc00; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        #answers button:hover {
+            background-color: #e6b800; 
+        }
+
+        #timer {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #004b87;
+        }
+
+        #result-screen {
+            display: none;
+        }
+
+        #score {
+            font-size: 28px;
+            margin-top: 20px;
+            color: #004b87;
+        }
+
+        #name-input {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #004b87;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="barra">
+        <h2>Biblioteca</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeaKsCrSCGnyqlFLzO6RlVUtq5RFTAYuAGmA&s" alt="Logo" width="120px" height="120px">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="BIBLIOTECA.html">Biblioteca</a></li>
+            <li><a href="juegoooo.html">Juego</a></li>
+        
+        </ul>
+    </div>
+
+
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <h1>Bienvenido al juego de Filosofía con Emojis</h1>
+            <p>Ingresa tu nombre para empezar:</p>
+            <input type="text" id="name-input" placeholder="Escribe tu nombre" />
+            <br>
+            <button id="start-btn">¡Jugar!</button>
+        </div>
+
+
+        <div id="game-screen" class="screen">
+            <h2 id="question"></h2>
+            <div id="emoji"></div>
+            <div id="answers"></div>
+            <p id="timer">15</p>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h2>Juego Terminado</h2>
+            <p id="score"></p>
+            <button id="restart-btn">Jugar de nuevo</button>
+        </div>
+    </div>
+
+    <script>
+     
+        const startScreen = document.getElementById("start-screen");
+        const gameScreen = document.getElementById("game-screen");
+        const resultScreen = document.getElementById("result-screen");
+        const startBtn = document.getElementById("start-btn");
+        const restartBtn = document.getElementById("restart-btn");
+        const questionElement = document.getElementById("question");
+        const emojiElement = document.getElementById("emoji");
+        const answersElement = document.getElementById("answers");
+        const timerElement = document.getElementById("timer");
+        const nameInput = document.getElementById("name-input");
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timer;
+        let timeRemaining = 15;
+        let playerName = "";
+
+        const questions = [
+            {
+                question: "¿Quién es conocido por su teoría de las Ideas?",
+                emojis: "🧠💭👀",
+                options: ["Platón", "Aristóteles", "Descartes", "Kant"],
+                answer: "Platón"
+            },
+            {
+                question: "¿Qué filósofo es conocido por su ética de la virtud?",
+                emojis: "⚖️🤝📜",
+                options: ["Socrates", "Aristóteles", "Nietzsche", "Hegel"],
+                answer: "Aristóteles"
+            },
+            {
+                question: "¿Quién dijo 'Pienso, luego existo'?",
+                emojis: "💭🤔➡️🙋‍♂️",
+                options: ["Descartes", "Kant", "Nietzsche", "Hume"],
+                answer: "Descartes"
+            },
+            {
+                question: "¿Qué corriente filosófica enfatiza la libertad individual?",
+                emojis: "🚶‍♂️💬💡",
+                options: ["Existencialismo", "Racionalismo", "Empirismo", "Idealismo"],
+                answer: "Existencialismo"
+            },
+            {
+                question: "¿Qué filósofo se centró en la moralidad y la ética del deber?",
+                emojis: "⚖️📜🤝",
+                options: ["Kant", "Nietzsche", "Hume", "Hegel"],
+                answer: "Kant"
+            },
+            // Agregar más preguntas según sea necesario
+        ];
+
+        startBtn.addEventListener("click", startGame);
+        restartBtn.addEventListener("click", restartGame);
+
+
+        function startGame() {
+            playerName = nameInput.value.trim();
+            if (!playerName) {
+                alert("Por favor, ingresa tu nombre.");
+                return;
+            }
+            startScreen.style.display = "none";
+            gameScreen.style.display = "block";
+            showQuestion();
+            startTimer();
+        }
+        function showQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+            emojiElement.textContent = currentQuestion.emojis;
+            answersElement.innerHTML = "";
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => checkAnswer(option);
+                answersElement.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedAnswer) {
+            const currentQuestion = questions[currentQuestionIndex];
+            if (selectedAnswer === currentQuestion.answer) {
+                score++;
+            }
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+                resetTimer();
+            } else {
+                endGame();
+            }
+        }
+
+        function startTimer() {
+            timeRemaining = 15;
+            timerElement.textContent = timeRemaining;
+            timer = setInterval(() => {
+                timeRemaining--;
+                timerElement.textContent = timeRemaining;
+                if (timeRemaining === 0) {
+                    clearInterval(timer);
+                    checkAnswer(""); 
+                }
+            }, 1000);
+        }
+
+        
+        function resetTimer() {
+            clearInterval(timer);
+            startTimer();
+        }
+
+        function endGame() {
+            gameScreen.style.display = "none";
+            resultScreen.style.display = "block";
+            document.getElementById("score").textContent = `${playerName}, tu puntuación final es: ${score} de ${questions.length}`;
+
+
+        }
+
+        function restartGame() {
+            currentQuestionIndex = 0;
+            score = 0;
+            resultScreen.style.display = "none";
+            startScreen.style.display = "block";
+            nameInput.value = "";  
+        }
+    </script>
+</body>
+</html>
